@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Register New RawDealer</h1>
+    <form action="admin/setRawdealer" method="POST">
+        <input type="text" name="companyID" placeholder="Comapany ID No." required />
+        <br /><br />
+        <input type="text" name="companyName" placeholder="Comapany Name" required />
+        <br /><br />
+        <input type="email" name="email" placeholder="Email" required />
+        <br /><br />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <br /><br />
+        <input type="text" name="companyAddress" placeholder="Comapany Address" required />
+        <br /><br />
+        <input type="text" name="state" placeholder="State" required />
+        <br /><br />
+        <input type="text" name="place" placeholder="Place" required />
+        <br /><br />
+        <input type="text" name="pincode" placeholder="Pin Code" required />
+        <br /><br />
+        <input type="text" name="licenceNo" placeholder="Licence Number" required />
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      <br /><br /><br />
+    <h1>Search RawDealer</h1>
+      <form action="admin/getRawdealer" method="GET">
+        <input type="text" name="companyID" placeholder="Company ID" />
+        <input type="submit" value="Search" />
+      </form>
+
+      <br><br><br><br>
+      <h1>Register New Manufacturer</h1>
+      <form action="admin/setManufacturer" method="POST">
+          <input type="text" name="companyID" placeholder="Comapany ID No." required />
+          <br /><br />
+          <input type="text" name="companyName" placeholder="Comapany Name" required />
+          <br /><br />
+          <input type="email" name="email" placeholder="Email" required />
+          <br /><br />
+          <input type="text" name="phone" placeholder="Phone Number" required />
+          <br /><br />
+          <input type="text" name="companyAddress" placeholder="Comapany Address" required />
+          <br /><br />
+          <input type="text" name="state" placeholder="State" required />
+          <br /><br />
+          <input type="text" name="place" placeholder="Place" required />
+          <br /><br />
+          <input type="text" name="pincode" placeholder="Pin Code" required />
+          <br /><br />
+          <input type="text" name="licenceNo" placeholder="Licence Number" required />
+          <br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+        <br /><br /><br />
+      <h1>Search Manufacturer</h1>
+        <form action="admin/getManufacturer" method="GET">
+          <input type="text" name="companyID" placeholder="Company ID" />
+          <input type="submit" value="Search" />
+        </form>
+
+        <br><br><br><br>
+      <h1>Register New Seller</h1>
+      <form action="admin/setSeller" method="POST">
+          <input type="text" name="sellerID" placeholder="Comapany ID No." required />
+          <br /><br />
+          <input type="text" name="sellerName" placeholder="Comapany Name" required />
+          <br /><br />
+          <input type="email" name="email" placeholder="Email" required />
+          <br /><br />
+          <input type="text" name="phone" placeholder="Phone Number" required />
+          <br /><br />
+          <input type="text" name="sellerAddress" placeholder="Comapany Address" required />
+          <br /><br />
+          <input type="text" name="state" placeholder="State" required />
+          <br /><br />
+          <input type="text" name="place" placeholder="Place" required />
+          <br /><br />
+          <input type="text" name="pincode" placeholder="Pin Code" required />
+          <br /><br />
+          <input type="text" name="licenceNo" placeholder="Licence Number" required />
+          <br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+        <br /><br /><br />
+      <h1>Search Seller</h1>
+        <form action="admin/getSeller" method="GET">
+          <input type="text" name="sellerID" placeholder="Company ID" />
+          <input type="submit" value="Search" />
+        </form>
+</body>
+</html>

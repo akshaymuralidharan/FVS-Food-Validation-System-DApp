@@ -1,0 +1,20 @@
+<% for(i = 0; i < count; i++) { %>
+    <%= result[i].materialID  %><br>
+    <%= result[i].materialName  %><br>
+    <%= result[i].quantity  %><br>
+    <%= result[i].numberOfProducts  %><br>
+    <%= result[i].productName  %><br>
+    <%= result[i].companyName  %><br>
+    <script>
+    
+            var myDate = new Date(<%= result[i].purchaseDate  %> *1000 );
+            document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
+        </script>
+    <br>
+    <script>
+    
+        var myDate = new Date(<%= result[i].expirayDate  %> *1000 );
+        document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
+    </script>
+    <br>
+    <% } %>

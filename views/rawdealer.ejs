@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="rawdealer/setRawMaterial" method="POST">
+        <input type="number" name="batch" placeholder="Enter the Batch No." required />
+        <br /><br />
+        <input type="number" name="materialID" placeholder="Enter The MaterialID" required />
+        <br /><br />
+        <input type="text" name="materialName" placeholder="Material Name" required />
+        <br /><br />
+        <input type="number" name="quantity" placeholder="Quantity" required />
+        <br /><br />
+        <input type="number" name="numberOfProducts" placeholder="Number of products" required />
+        <br /><br />
+        <input type="text" name="productName" placeholder="Product Name" required />
+        <br /><br />
+        <input type="text" name="companyName" placeholder="Company Name" required />
+        <br /><br />
+        <input type="number" name="validtill" placeholder="Expirary in Months" required />
+        <br /><br />
+        <input type="text" name="purchaseDate"  hidden />
+        <br /><br />
+        <input type="text" name="expirayDate"  hidden />
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      <br /><br /><br />
+    
+      <form action="rawdealer/getRawMaterial" method="GET">
+        <input type="number" name="batch" placeholder="Batch Number" />
+        <input type="submit" value="Search" />
+      </form>
+</body>
+</html>
+
