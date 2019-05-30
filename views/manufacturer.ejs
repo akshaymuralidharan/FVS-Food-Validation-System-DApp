@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manufacturer</title>
+</head>
+<body>
+    <h1>Adding Products</h1>
+    <form action="manufacturer/setProducts" method="POST">
+        <input type="number" name="productID" placeholder="Enter the productID" required />
+        <br /><br />
+        <input type="text" name="productName" placeholder="Enter The Product Name" required />
+        <br /><br />
+        <input type="number" name="quantity" placeholder="Quantity" required />
+        <br /><br />
+        <input type="text" name="companyName" placeholder="Company Name" required />
+        <br /><br />
+        <input type="number" name="MRP" placeholder="MRP" required />
+        <br /><br />
+        <input type="text" name="expireInMonths" placeholder="Expire in Months" required />
+        <br /><br />
+        <input type="text" name="batch" placeholder="Batch No." required />
+        <br /><br />
+        <input type="text" name="EXP" hidden />
+        <br /><br />
+        <input type="text" name="MFD"  hidden />
+        <br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      <br /><br /><br />
+    
+      <h1>Search Products by Batch</h1>
+      <form action="manufacturer/batchOfproducts" method="GET">
+        <input type="number" name="batch" placeholder="Batch Number" />
+        <input type="submit" value="Search" />
+      </form>
+</body>
+</html>

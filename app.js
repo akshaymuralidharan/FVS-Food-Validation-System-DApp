@@ -19,6 +19,7 @@ MyContract = new web3.eth.Contract(abi, contractAddress);
 var rawdealerRouter = require('./routes/rawdealer');
 var adminRouter = require('./routes/admin')
 var indexRouter = require('./routes/index');
+var manufacturerRouter = require('./routes/manufacturer');
 //var usersRouter = require('./routes/users');
 
 var app = express();
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/rawdealer', rawdealerRouter);
 app.use('/admin', adminRouter);
 app.use('/', indexRouter);
+app.use('/manufacturer', manufacturerRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

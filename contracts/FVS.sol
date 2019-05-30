@@ -6,6 +6,7 @@ contract FVS {
   //declaring state variables
   address admin;
   uint public  month = 720 hours;
+  uint public currentTime = now;
   //creating contructors
   constructor() public {
     admin = msg.sender;
@@ -15,6 +16,9 @@ contract FVS {
         require(msg.sender == admin);
         _;
     }
+    
+    
+    
   //create mapping for storing the count of each batch id
   mapping(uint => uint) public NOPcount;
 
@@ -164,21 +168,44 @@ contract FVS {
   }
 
   // array mapping to add the products
-    mapping(uint => products[]) public productDetail;
+    mapping(uint => products) public productDetail;
+    mapping(uint => uint[]) public batchOfproducts;
+    
+    // mapping(uint => mapping(uint => productDetail)) batchOfproducts;
+
+    
+    
+    // creating modifier for adding products
+    modifier adding_products(uint _batch){
+        _;
+        require (NOPcount[_batch] <= rawMaterialsDetail[_batch][0].numberOfProducts && now < rawMaterialsDetail[_batch][0].expirayDate);
+        
+        }
+    
+    uint public MAXcount;
+    uint public EXPdate;
+
+    //function to get the lenght of the array of a batchOfproducts
+    function getLenOfproduct(uint _batch) public view returns (uint _len) {
+        _len = batchOfproducts[_batch].length;
+    }
 
   //function to add the products
-  function setProducts(uint _productID, string memory _productName, uint quantity, string memory _companyName, uint _MRP, uint _expireInMonths, uint _MFD, uint _EXP, uint _batch) public {
+  function setProducts(uint _productID, string memory _productName, uint _quantity, string memory _companyName, uint _MRP, uint _expireInMonths, uint _MFD, uint _EXP, uint _batch) public adding_products(_batch){
         _MFD = now;
         _expireInMonths = month * _expireInMonths;
         _EXP = now + _expireInMonths;
-        uint MAXcount = rawMaterialsDetail[_batch][0].numberOfProducts;
-        uint EXPdate = rawMaterialsDetail[_batch][0].expirayDate;
-        uint CRNTcount = NOPcount[_batch];
-        if(CRNTcount <= MAXcount && EXPdate < _MFD){
         
-        productDetail[_productID].push(products(_productName, quantity, _companyName, _MRP, _expireInMonths, _MFD, _EXP, _batch));
-        }
-        NOPcount[_batch] = CRNTcount + 1;
+        MAXcount = rawMaterialsDetail[_batch][0].numberOfProducts;
+        EXPdate = rawMaterialsDetail[_batch][0].expirayDate;
+        //uint CRNTcount = NOPcount[_batch];
+        //require (CRNTcount <= MAXcount && _MFD < EXPdate);
+        //require (NOPcount[_batch] <= rawMaterialsDetail[_batch][0].numberOfProducts && now < rawMaterialsDetail[_batch][0].expirayDate);
+        
+        productDetail[_productID] = products(_productName, _quantity, _companyName, _MRP, _expireInMonths, _MFD, _EXP, _batch);
+        batchOfproducts[_batch].push(_productID);
+        
+        NOPcount[_batch] += 1;
     }
 
     //structure for the billing
@@ -189,14 +216,19 @@ contract FVS {
     }
 
     //mapping of billing
-    mapping(uint => billing) public billed;
+    mapping(uint => billing[]) public billed;
+
+    //function to get the lenght of the array of a billed
+    function getLenOfbilled(uint _billID) public view returns (uint _len) {
+        _len = billed[_billID].length;
+    }
 
     //function to insert the billing details
     function setbill(uint _billID, string memory _shopID, uint _purchaseDate, uint _productID) public{
       _purchaseDate = now;
       if(soldORnot[_productID] == 0){
 
-        billed[_billID] = billing(_shopID, _purchaseDate, _productID);
+        billed[_billID].push(billing(_shopID, _purchaseDate, _productID));
         soldORnot[_productID] = 1;
       }
     }

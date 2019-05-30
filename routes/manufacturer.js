@@ -3,16 +3,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('rawdealer', { title: 'Express' });
+    res.render('manufacturer', { title: 'Express' });
   });
 
-router.post('/setRawMaterial', function (req, res, next) {
+router.post('/setProducts', function (req, res, next) {
     data = req.body;
     console.log(data);
-    MyContract.methods.setRawMaterial(data.batch, data.materialID, data.materialName, data.quantity, data.numberOfProducts, data.productName, data.companyName, data.purchaseDate, data.validtill, data.expirayDate)
+    MyContract.methods.setProducts(data.productID, data.productName, data.quantity, data.quantity, data.MRP, data.expireInMonths, data.MFD, data.EXP, data.batch)
         .send({ from: coinbase, gas : 6000000 });
-    res.send("Raw Material Added !")
+    
+    res.send("Product Added !")
 });
+
+
 
 // router.get('/getRawMaterial', function (req, res, next) {
 //     data = req.query;
@@ -31,30 +34,32 @@ router.post('/setRawMaterial', function (req, res, next) {
 //         })
 // });
 
-router.get("/getRawMaterial", function(req, res, next) {
+router.get("/batchOfproducts", function(req, res, next) {
     data = req.query;
     console.log(data);
     result = [];
     MyContract.methods
-      .getLen(data.batch)
+      .getLenOfproduct(data.batch)
       .call()
       .then(async count => {
           console.log(count)
         for (i = 0; i < count; i++) {
           
           await MyContract.methods
-            .rawMaterialsDetail(data.batch, i)
+            .batchOfproducts(data.batch, i)
             .call()
-            .then(res => {
+            .then(res1 => {
               console.log(res);
               console.log(count);
-              result.push(res);
+              result.push(res1);
             }).catch(function(e) {
               console.log(e); // This is never called
             });
         }
         console.log(result);
-        res.render("rawmaterial_view", { result, count });
+        res.redirect('productBatchview', { result, count });
+      }).catch(function(e) {
+        console.log(e); // This is never called
       });
   });
 
