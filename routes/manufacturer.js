@@ -57,7 +57,7 @@ router.get("/batchOfproducts", function(req, res, next) {
             });
         }
         console.log(result);
-        res.redirect('productBatchview', { result, count });
+        res.render('productBatchview', { result, count });
       }).catch(function(e) {
         console.log(e); // This is never called
       });

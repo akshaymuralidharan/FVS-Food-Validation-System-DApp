@@ -16,9 +16,6 @@ contract FVS {
         require(msg.sender == admin);
         _;
     }
-    
-    
-    
   //create mapping for storing the count of each batch id
   mapping(uint => uint) public NOPcount;
 
@@ -223,14 +220,18 @@ contract FVS {
         _len = billed[_billID].length;
     }
 
+  modifier billing_products(uint _productID){
+        
+        require (soldORnot[_productID] == 0 && now < productDetail[_productID].EXP);
+        _;
+        
+        }
     //function to insert the billing details
-    function setbill(uint _billID, string memory _shopID, uint _purchaseDate, uint _productID) public{
+    function setbill(uint _billID, string memory _shopID, uint _purchaseDate, uint _productID) public billing_products(_productID) returns (bool){
       _purchaseDate = now;
-      if(soldORnot[_productID] == 0){
-
-        billed[_billID].push(billing(_shopID, _purchaseDate, _productID));
-        soldORnot[_productID] = 1;
-      }
+      billed[_billID].push(billing(_shopID, _purchaseDate, _productID));
+      soldORnot[_productID] = 1;
+      return true;
     }
 }
 

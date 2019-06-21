@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-        <% for(i = 0; i < count; i++) { %>
-            <%= result[i] %><br>
-            <% } %>
-        
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <center>
+      <h1>Products In this Batch</h1>
+    <% for(i = 0; i < count; i++) { %>
+    <button onclick="check('<%= result[i] %>')"><%= result[i] %></button><br />
+    <% } %>
+
+    <script>
+      function check(value) {
+        $.get("/users/productDetail", {
+          productID: value
+        });
+      }
+    </script>
+    </center>
+  </body>
 </html>

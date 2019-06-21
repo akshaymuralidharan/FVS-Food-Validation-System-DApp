@@ -7,21 +7,22 @@
     <title>Manufacturer</title>
 </head>
 <body>
+  <center></center>
     <h1>Adding Products</h1>
     <form action="manufacturer/setProducts" method="POST">
-        <input type="number" name="productID" placeholder="Enter the productID" required />
+        Product ID :<input type="number" name="productID" placeholder="Enter the productID" required />
         <br /><br />
-        <input type="text" name="productName" placeholder="Enter The Product Name" required />
+        Product Name :<input type="text" name="productName" placeholder="Enter The Product Name" required />
         <br /><br />
-        <input type="number" name="quantity" placeholder="Quantity" required />
+        Quantity :<input type="number" name="quantity" placeholder="Quantity" required />
         <br /><br />
-        <input type="text" name="companyName" placeholder="Company Name" required />
+        Company Name :<input type="text" name="companyName" placeholder="Company Name" required />
         <br /><br />
-        <input type="number" name="MRP" placeholder="MRP" required />
+        MRP :<input type="number" name="MRP" placeholder="MRP" required />
         <br /><br />
-        <input type="text" name="expireInMonths" placeholder="Expire in Months" required />
+        Expire in Months :<input type="text" name="expireInMonths" placeholder="Expire in Months" required />
         <br /><br />
-        <input type="text" name="batch" placeholder="Batch No." required />
+        Batch No :<input type="text" name="batch" placeholder="Batch No." required />
         <br /><br />
         <input type="text" name="EXP" hidden />
         <br /><br />
@@ -33,8 +34,9 @@
     
       <h1>Search Products by Batch</h1>
       <form action="manufacturer/batchOfproducts" method="GET">
-        <input type="number" name="batch" placeholder="Batch Number" />
+        Enter the Batch No :<input type="number" name="batch" placeholder="Batch Number" />
         <input type="submit" value="Search" />
       </form>
+    </center>
 </body>
 </html>

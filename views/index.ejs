@@ -1,11 +1,129 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Electronic Health Record | Sign In</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body class="login-page" style="background: url('images/blog-doctor.png') no-repeat center center fixed; background-size: auto; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);"  style="color: rgb(111, 111, 247)">FVS-Food Validation System</a>
+            <small style="color: rgb(73, 73, 236)">A Blockchain Powered Universal Food Validation system </small>
+        </div>
+        <div class="card">
+            <div class="body">
+                <!-- <form id="sign_in" method="POST">
+                    <div class="msg"></div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="Lusername" placeholder="Username" required autofocus>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="Lpassword" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                            <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                            <label for="rememberme">Remember Me</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-indigo waves-effect" type="submit">SIGN IN</button>
+                        </div>
+                    </div>
+                    <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-12">
+                           <p> Not a Member yet?</p> <p style="display: inline;">Register As</p>
+                            <a href="doctorRegistration" style="color: rgb(73, 73, 236); display: inline;">Medical Professional</a><p style="display: inline;"> or </p>
+                            <a href="patientRegistration" style="color: rgb(73, 73, 236); display: inline">Patient</a>
+                            
+                        </div>
+                            <div class="col-xs-6 align-right">
+                            <a href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                        </div>
+                </form> -->
+
+                <div class="row">
+                    <div class="col-12" style="text-align:center;">
+                        <strong>Login as..!</strong>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="admin" class="btn btn-block btn-warning" style="color:white;" target="_blank">Admin</a>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <a href="rawdealer" class="btn btn-block btn-warning" style="color:white;" target="_blank">Rawdealer</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="manufacturer" class="btn btn-block btn-warning" style="color:white;" target="_blank">Manufacturer</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="seller" class="btn btn-block btn-warning" style="color:white;" target="_blank">Seller</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="users" class="btn btn-block btn-warning" style="color:white;" target="_blank">Users</a>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-12" style="text-align : center">
+                        <a href="https://ropsten.etherscan.io/address/0x9bb7476324bcf4db0b9ac73aa52c3606683c39b9" class="btn btn-link" target="_blank">Block Explorer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../plugins/node-waves/waves.js"></script>
+
+    <!-- Validation Plugin Js -->
+    <script src="../plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../js/admin.js"></script>
+    <script src="../js/pages/examples/sign-in.js"></script>
+</body>
+
 </html>

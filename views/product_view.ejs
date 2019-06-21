@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Product View</title>
+  </head>
+  <body>
+    <center>
+        
+      <h1>Product Details</h1>
+      <table>
+        <tr>
+          <td>Product Name :</td>
+          <td><%= myData.productName %></td>
+        </tr>
+        <tr>
+          <td>Quantity :</td>
+          <td><%= myData.quantity %></td>
+        </tr>
+        <tr>
+          <td>Company Name :</td>
+          <td><%= myData.companyName %></td>
+        </tr>
+        <tr>
+          <td>MRP :</td>
+          <td><%= myData.MRP %></td>
+        </tr>
+        <tr>
+          <td>Expire In months :</td>
+          <td><%= myData.expireInMonths %></td>
+        </tr>
+        <tr>
+          <td>MFD :</td>
+          <td>
+            <script>
+
+              var myDate = new Date(<%= myData.MFD  %> * 1000 );
+              document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>EXP :</td>
+          <td>
+            <script>
+
+              var myDate = new Date(<%= myData.EXP  %> * 1000 );
+              document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>Batch :</td>
+          <td><%= myData.batch %></td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>

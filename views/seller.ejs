@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seller</title>
+</head>
+<body>
+    <center>
+        <h1>Billing</h1>
+        <form action="seller/setbill" method="POST">
+            Bill Id :<input type="text" name="billID" placeholder="Bill ID" required />
+            <br /><br />
+            Shop Id :<input type="text" name="shopID" placeholder="Shop ID" required />
+            <br /><br />
+            Product Id :<input type="text" name="productID" placeholder="Product ID" required />
+            <br /><br />
+            <input type="text" name="purchaseDate" hidden />
+            <br /><br />
+            <input type="submit" value="Submit" />
+          </form>
+        </center>
+</body>
+</html>

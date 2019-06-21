@@ -20,7 +20,8 @@ var rawdealerRouter = require('./routes/rawdealer');
 var adminRouter = require('./routes/admin')
 var indexRouter = require('./routes/index');
 var manufacturerRouter = require('./routes/manufacturer');
-//var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
+var sellerRouter = require('./routes/seller');
 
 var app = express();
 
@@ -38,7 +39,8 @@ app.use('/rawdealer', rawdealerRouter);
 app.use('/admin', adminRouter);
 app.use('/', indexRouter);
 app.use('/manufacturer', manufacturerRouter);
-//app.use('/users', usersRouter);
+app.use('/users', usersRouter);
+app.use('/seller', sellerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

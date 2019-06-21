@@ -7,26 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <center>
+        <h1>Raw Material</h1>
         <% for(i = 0; i < count; i++) { %>
-            <%= result[i].materialID  %><br>
-            <%= result[i].materialName  %><br>
-            <%= result[i].quantity  %><br>
-            <%= result[i].numberOfProducts  %><br>
-            <%= result[i].productName  %><br>
-            <%= result[i].companyName  %><br>
-            <script>
+           Material Id : <%= result[i].materialID  %><br>
+           Material Name : <%= result[i].materialName  %><br>
+           Quantity : <%= result[i].quantity  %><br>
+           NumberOfProducts : <%= result[i].numberOfProducts  %><br>
+           Product Name : <%= result[i].productName  %><br>
+           Company Name : <%= result[i].companyName  %><br>
+           Purchase Date : <script>
             
                     var myDate = new Date(<%= result[i].purchaseDate  %> * 1000 );
                     document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
                 </script>
             <br>
-            <script>
+           Expiary Date : <script>
             
                 var myDate = new Date(<%= result[i].expirayDate  %> * 1000 );
                 document.write(myDate.toGMTString()+"<br>"+myDate.toLocaleString());
             </script>
             <br>
             <% } %>
-        
+        </center>
 </body>
 </html>
